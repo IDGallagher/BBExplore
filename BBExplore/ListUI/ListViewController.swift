@@ -62,6 +62,12 @@ extension ListViewController: UITableViewDataSource {
     }
 }
 
+extension ListViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 88.0
+    }
+}
+
 extension ListViewController: UISearchResultsUpdating {
     func updateSearchResults(for searchController: UISearchController) {
         presenter.set(searchFilter: searchController.searchBar.text)

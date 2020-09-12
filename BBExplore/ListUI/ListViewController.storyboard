@@ -23,6 +23,7 @@
                                 <sections/>
                                 <connections>
                                     <outlet property="dataSource" destination="keh-fF-DSk" id="VOa-4l-Wlk"/>
+                                    <outlet property="delegate" destination="keh-fF-DSk" id="2ao-rE-hMJ"/>
                                 </connections>
                             </tableView>
                         </subviews>

@@ -7,12 +7,23 @@
 //
 
 import UIKit
+import AlamofireImage
 
 class ListItemTableViewCell : UITableViewCell {
     
-    @IBOutlet var label: UILabel!
+    @IBOutlet var itemLabel: UILabel!
+    @IBOutlet var itemImage: UIImageView!
     
     func configure(withListItem listItem: ListItemEntity) {
-        label.text = listItem.title
+        itemLabel.text = listItem.title
+        
+        let url = URL(string: listItem.imageURL)!
+        let filter = CircleFaceFilter(size: CGSize(width: 88.0, height: 88.0))
+        itemImage.af.setImage(withURL: url, filter: filter, imageTransition: .crossDissolve(0.6), runImageTransitionIfCached: false)
+    }
+    
+    override func prepareForReuse() {
+        itemImage.af.cancelImageRequest()
+        itemImage.image = nil
     }
 }
