@@ -57,7 +57,8 @@ class CharacterListPresenter : ListPresenter {
     
     private func createListItems(fromCharacters characters: [CharacterEntity]?) -> [ListItemEntity]? {
         let filteredCharacters = characters?.filter({
-            (searchFilter.value == nil || searchFilter.value == "" || $0.name.lowercased().contains(searchFilter.value!.lowercased()))
+            $0.appearance.count > 0
+                && (searchFilter.value == nil || searchFilter.value == "" || $0.name.lowercased().contains(searchFilter.value!.lowercased()))
                 && (searchCategory.value?.uid == nil || $0.appearance.contains(searchCategory.value!.uid!))
         })
         return filteredCharacters?.map({listItem(fromCharacter: $0)})
