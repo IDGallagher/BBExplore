@@ -8,12 +8,12 @@
 
 import UIKit
 
-class MainNavigationController : UINavigationController {
+class BBNavigationController : UINavigationController {
     
-    var router: MainRouter!
+    var router: BBRouter!
 
     override func viewDidLoad() {
-        router = MainRouter(navigationController: self)
+        router = BBRouter(navigationController: self)
         router.onLaunch()
     }
 }

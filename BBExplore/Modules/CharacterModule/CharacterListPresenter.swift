@@ -10,11 +10,11 @@ import Foundation
 import Bond
 import ReactiveKit
 
-class CharacterListPresenter : ListPresenter {
+public class CharacterListPresenter : ListPresenter {
     
     let bag = DisposeBag()
     let interactor: CharacterInteractor
-    var router: Router
+    let router: Router?
     
     private(set) var listItems = Observable<[ListItemEntity]?>(nil)
     private(set) var isRefreshing = Observable<Bool>(false)
@@ -24,7 +24,7 @@ class CharacterListPresenter : ListPresenter {
     private var searchFilter = Observable<String?>(nil)
     private var searchCategory = Observable<SearchCategoryEntity?>(nil)
     
-    init(router: Router, interactor: CharacterInteractor) {
+    init(router: Router?, interactor: CharacterInteractor) {
         
         self.interactor = interactor
         self.router = router
@@ -89,6 +89,6 @@ class CharacterListPresenter : ListPresenter {
             else {
                 return
         }
-        router.navigateTo(path: "\(listItems[index].uid)")
+        router?.navigateTo(path: "\(listItems[index].uid)")
     }
 }

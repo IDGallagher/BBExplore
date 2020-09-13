@@ -10,16 +10,16 @@ import Foundation
 import Bond
 import ReactiveKit
 
-class CharacterDetailPresenter {
+public class CharacterDetailPresenter {
     
     let bag = DisposeBag()
-    let router: Router
+    let router: Router?
     let interactor: CharacterInteractor
     
     private var uid = Observable<Int?>(nil)
     private(set) var character = Observable<CharacterEntity?>(nil)
     
-    init(router: Router, interactor: CharacterInteractor, uid: Int?) {
+    init(router: Router?, interactor: CharacterInteractor, uid: Int?) {
         
         self.router = router
         self.interactor = interactor
@@ -36,6 +36,6 @@ class CharacterDetailPresenter {
     }
     
     func backButtonPressed() {
-        router.goBack()
+        router?.goBack()
     }
 }

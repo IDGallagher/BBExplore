@@ -7,10 +7,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--List View Controller-->
+        <!--BBListViewController-->
         <scene sceneID="yJA-qc-CBA">
             <objects>
-                <viewController id="keh-fF-DSk" customClass="ListViewController" customModule="BBExplore" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="keh-fF-DSk" userLabel="BBListViewController" customClass="BBListViewController" customModule="BBExplore" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="9w1-Kz-pyC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -26,8 +26,8 @@
                                 <viewLayoutGuide key="frameLayoutGuide" id="tCP-ha-Gaz"/>
                                 <sections/>
                                 <connections>
-                                    <outlet property="dataSource" destination="keh-fF-DSk" id="VOa-4l-Wlk"/>
-                                    <outlet property="delegate" destination="keh-fF-DSk" id="2ao-rE-hMJ"/>
+                                    <outlet property="dataSource" destination="keh-fF-DSk" id="DOu-9E-mEn"/>
+                                    <outlet property="delegate" destination="keh-fF-DSk" id="Wol-bU-Fg4"/>
                                 </connections>
                             </tableView>
                         </subviews>

@@ -35,7 +35,7 @@ class ListViewController : UIViewController {
             self?.searchController.searchBar.selectedScopeButtonIndex = 0
         }.dispose(in: bag)
         
-        tableView.alpha = 0
+        tableView?.alpha = 0
         presenter.refresh()
     }
     
@@ -49,7 +49,7 @@ class ListViewController : UIViewController {
         searchController.hidesNavigationBarDuringPresentation = false
     }
     
-    func configureSearchController() {
+    private func configureSearchController() {
         searchController.searchResultsUpdater = self
         searchController.obscuresBackgroundDuringPresentation = false
         searchController.searchBar.placeholder = presenter.searchPlaceHolder
@@ -59,14 +59,22 @@ class ListViewController : UIViewController {
     }
     
     func registerNibs() {
-        tableView.register(ListItemTableViewCell.getNib(), forCellReuseIdentifier: ListItemTableViewCell.reuseIdentifier)
+        
+    }
+    
+    func dequeueCell(for indexPath: IndexPath) -> ListItemCell? {
+        return nil
+    }
+    
+    func heightForRow(at indexPath: IndexPath) -> CGFloat {
+        return 0
     }
 }
 
 extension ListViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: ListItemTableViewCell.reuseIdentifier, for: indexPath) as! ListItemTableViewCell
+        let cell = dequeueCell(for: indexPath)!
         cell.configure(withListItem: presenter.listItems.value![indexPath.row])
         return cell
     }

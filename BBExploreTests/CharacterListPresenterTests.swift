@@ -35,7 +35,7 @@ class CharacterListPresenterTests: XCTestCase {
         
         let apiService: CharacterAPI = APIService()
         let interactor = CharacterInteractor(apiService: apiService)
-        let presenter = CharacterListPresenter(interactor: interactor)
+        let presenter = CharacterListPresenter(router: nil, interactor: interactor)
         
         var count = -1
         presenter.listItems.observeNext(){ listItems in

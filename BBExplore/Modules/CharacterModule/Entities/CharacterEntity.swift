@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct CharacterEntity : Decodable {
+public struct CharacterEntity : Decodable {
     let charId: Int
     let name: String
     let img: String

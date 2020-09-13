@@ -8,27 +8,23 @@
 
 import UIKit
 
-protocol Router {
-    func navigateTo(path: String)
-    func goBack()
-}
-
-class MainRouter : Router {
+class BBRouter : Router {
     
-    let navigationController: MainNavigationController
+    let navigationController: UINavigationController
     let interactor: CharacterInteractor
     
-    init(navigationController: MainNavigationController) {
+    init(navigationController: UINavigationController) {
         self.navigationController = navigationController
         self.interactor = CharacterInteractor(apiService: APIService())
     }
     
     func onLaunch() {
-        let viewController = ListViewController.createFromStoryboard()
+        let viewController = BBListViewController.createFromStoryboard()
         viewController.presenter = CharacterListPresenter(router: self, interactor: interactor)
         navigationController.pushViewController(viewController, animated: false)
     }
-    
+     
+    /// Generally in a more complex app, path could be a path url to be parsed to specify the navigation path. However here it is always just the character ID
     func navigateTo(path: String) {
         let viewController = BBDetailViewController.createFromStoryboard()
         viewController.presenter = CharacterDetailPresenter(router: self, interactor: interactor, uid: Int(path))

@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct ListItemEntity {
+public struct ListItemEntity {
     let uid: Int
     let title: String
     let imageURL: String

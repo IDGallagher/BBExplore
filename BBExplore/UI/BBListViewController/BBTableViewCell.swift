@@ -9,7 +9,7 @@
 import UIKit
 import AlamofireImage
 
-class ListItemTableViewCell : UITableViewCell {
+class BBTableViewCell : UITableViewCell, ListItemCell {
     
     @IBOutlet var itemLabel: UILabel!
     @IBOutlet var itemImage: UIImageView!
@@ -18,9 +18,8 @@ class ListItemTableViewCell : UITableViewCell {
         itemLabel.text = listItem.title
         
         let url = URL(string: listItem.imageURL)!
-        let filter = CircleFaceFilter(size: CGSize(width: 88.0, height: 88.0))
-//        let filter = AspectScaledToFillSizeCircleFilter(size: CGSize(width: 88.0, height: 88.0))
-        itemImage.af.setImage(withURL: url, filter: filter, imageTransition: .crossDissolve(0.6), runImageTransitionIfCached: false)
+        let filter = CircleFaceFilter(size: CGSize(width: Constants.cellHeight, height: Constants.cellHeight))
+        itemImage.af.setImage(withURL: url, filter: filter, imageTransition: .crossDissolve(Constants.crossDissolveTime), runImageTransitionIfCached: false)
     }
     
     override func prepareForReuse() {
