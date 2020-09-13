@@ -63,10 +63,12 @@ class ListViewController : UIViewController {
     }
     
     func dequeueCell(for indexPath: IndexPath) -> ListItemCell? {
+        assertionFailure("Should be overridden!")
         return nil
     }
     
     func heightForRow(at indexPath: IndexPath) -> CGFloat {
+        assertionFailure("Should be overridden!")
         return 0
     }
 }
@@ -91,7 +93,7 @@ extension ListViewController: UITableViewDataSource {
 
 extension ListViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 88.0
+        return heightForRow(at: indexPath)
     }
 }
 

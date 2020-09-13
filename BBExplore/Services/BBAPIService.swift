@@ -1,5 +1,5 @@
 //
-//  APIService.swift
+//  BBAPIService.swift
 //  BBExplore
 //
 //  Created by Ian Gallagher on 10/09/2020.
@@ -9,7 +9,7 @@
 import Foundation
 import Alamofire
 
-class APIService {
+class BBAPIService {
     
     let decoder: JSONDecoder
     
@@ -19,7 +19,7 @@ class APIService {
     }
 }
 
-extension APIService: CharacterAPI {
+extension BBAPIService: CharacterAPI {
     
     func fetchCharacters(completion: @escaping (Int?, [CharacterEntity]?) -> Void) {
         

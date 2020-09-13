@@ -3,6 +3,7 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -24,10 +25,10 @@
                                                 <rect key="frame" x="0.0" y="0.0" width="414" height="560"/>
                                                 <subviews>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="aaH-0h-JZw">
-                                                        <rect key="frame" x="0.0" y="448" width="414" height="112"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="414" height="560"/>
                                                     </imageView>
                                                 </subviews>
-                                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                                <color key="backgroundColor" systemColor="systemGray5Color" red="0.8980392157" green="0.8980392157" blue="0.91764705879999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
                                                     <constraint firstItem="aaH-0h-JZw" firstAttribute="leading" secondItem="agc-6L-Wag" secondAttribute="leading" id="2n4-E6-NSx"/>
                                                     <constraint firstAttribute="height" priority="900" constant="520" id="7MH-g6-xey">
@@ -155,6 +156,7 @@
                             <constraint firstAttribute="trailing" secondItem="UOK-ge-Iy1" secondAttribute="trailing" id="kx6-Sp-fD9"/>
                             <constraint firstItem="aaH-0h-JZw" firstAttribute="top" secondItem="hfb-Xm-0G7" secondAttribute="top" priority="900" id="uve-aE-Zs5"/>
                         </constraints>
+                        <viewLayoutGuide key="safeArea" id="Qgh-pY-97j"/>
                     </view>
                     <connections>
                         <outlet property="appearanceLabel" destination="sdb-L4-nSc" id="JbF-C8-rHT"/>

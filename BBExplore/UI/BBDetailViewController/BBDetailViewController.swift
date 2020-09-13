@@ -45,7 +45,7 @@ class BBDetailViewController : UIViewController {
     func configureWith(character: CharacterEntity?) {
         guard let character = character else { return }
         let url = URL(string: character.img)!
-        imageView.af.setImage(withURL: url, imageTransition: .crossDissolve(Constants.crossDissolveTime), runImageTransitionIfCached: false)
+        imageView.af.setImage(withURL: url, runImageTransitionIfCached: false)
         
         nameLabel.text = character.name
         nicknameLabel.text = "aka \(character.nickname)"

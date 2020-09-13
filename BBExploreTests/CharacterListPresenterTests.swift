@@ -20,7 +20,7 @@ class CharacterListPresenterTests: XCTestCase {
         HTTPStubs.removeAllStubs()
     }
 
-    /// Test the api service parses CharacterEntities correctly
+    /// Test the presenter filters characters correctly
     func testSearchAndFilter() throws {
         
         stub(condition: isAbsoluteURLString(Constants.apiCharacters)) { _ in
@@ -33,59 +33,38 @@ class CharacterListPresenterTests: XCTestCase {
         
         let fetchListItems = expectation(description: "fetch character data")
         
-        let apiService: CharacterAPI = APIService()
+        let apiService: CharacterAPI = BBAPIService()
         let interactor = CharacterInteractor(apiService: apiService)
         let presenter = CharacterListPresenter(router: nil, interactor: interactor)
         
-        var count = -1
-        presenter.listItems.observeNext(){ listItems in
-//            print("\(listItems?[0])")
-            guard listItems != nil else { return }
-            count += 1
-            print(count)
-            if count == 0 {
-                XCTAssertTrue(listItems!.count == 3)
-                XCTAssertTrue(listItems![2].title == "Christian Ortgea")
-                presenter.set(searchCategory: SearchCategoryEntity(uid: 2, title: ""))
-            } else if count == 1 {
-                presenter.set(searchFilter: "R")
-//                print(listItems)
-            } else {
-//                print(listItems)
-                fetchListItems.fulfill()
-            }
-            
-        }.dispose(in: bag)
-        
-        presenter.set(searchFilter: "Rt")
-        presenter.set(searchCategory: SearchCategoryEntity(uid: 1, title: ""))
+        /// Refresh is asynchronous so wait for it to finish before testing
         presenter.refresh()
         
-        
-        
-        waitForExpectations(timeout: 5, handler: nil)
-    }
+        var started: Bool = false
+        presenter.listItems.observeNext(){ listItems in
+            guard listItems != nil else { return }
+            if !started {
+                started = true
+                testSearch()
+                fetchListItems.fulfill()
+            }
+        }.dispose(in: bag)
     
-    /// Test the api service reacts to backend errors
-    func testCharacterAPIFail() throws {
-        
-        stub(condition: isAbsoluteURLString(Constants.apiCharacters)) { _ in
-            return HTTPStubsResponse(
-                fileAtPath: OHPathForFile("backendErrorMock.json", type(of: self))!,
-                statusCode: 500,
-                headers: ["Content-Type":"application/json"]
-            )
+        /// Run tests
+        func testSearch() {
+            presenter.set(searchFilter: "Tr")
+            XCTAssertTrue(presenter.listItems.value?.count == 3)
+            presenter.set(searchCategory: SearchCategoryEntity(uid: 1, title: ""))
+            XCTAssertTrue(presenter.listItems.value?.count == 0)
+            presenter.set(searchCategory: SearchCategoryEntity(uid: 2, title: ""))
+            XCTAssertTrue(presenter.listItems.value?.count == 1)
+            presenter.set(searchCategory: SearchCategoryEntity(uid: 3, title: ""))
+            XCTAssertTrue(presenter.listItems.value?.count == 3)
+            presenter.set(searchFilter: "t")
+            XCTAssertTrue(presenter.listItems.value?.count == 23)
+            XCTAssertTrue(presenter.listItems.value?.first?.title == "Walter White")
         }
-        
-        let fetchCharacters = expectation(description: "fetch character data")
-        
-        let apiService: CharacterAPI = APIService()
-        
-        apiService.fetchCharacters() { statusCode, characters in
-            XCTAssertTrue(statusCode == 500)
-            fetchCharacters.fulfill()
-        }
-        
+
         waitForExpectations(timeout: 5, handler: nil)
     }
 }

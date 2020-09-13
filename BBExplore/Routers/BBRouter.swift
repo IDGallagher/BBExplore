@@ -1,5 +1,5 @@
 //
-//  MainRouter.swift
+//  BBRouter.swift
 //  BBExplore
 //
 //  Created by Ian Gallagher on 11/09/2020.
@@ -15,7 +15,7 @@ class BBRouter : Router {
     
     init(navigationController: UINavigationController) {
         self.navigationController = navigationController
-        self.interactor = CharacterInteractor(apiService: APIService())
+        self.interactor = CharacterInteractor(apiService: BBAPIService())
     }
     
     func onLaunch() {

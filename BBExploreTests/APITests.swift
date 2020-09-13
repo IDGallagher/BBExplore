@@ -33,7 +33,7 @@ class APITests: XCTestCase {
         
         let fetchCharacters = expectation(description: "fetch character data")
         
-        let apiService: CharacterAPI = APIService()
+        let apiService: CharacterAPI = BBAPIService()
         
         apiService.fetchCharacters() { statusCode, characters in
             XCTAssertTrue(characters != nil && characters!.count > 1)
@@ -56,7 +56,7 @@ class APITests: XCTestCase {
         
         let fetchCharacters = expectation(description: "fetch character data")
         
-        let apiService: CharacterAPI = APIService()
+        let apiService: CharacterAPI = BBAPIService()
         
         apiService.fetchCharacters() { statusCode, characters in
             XCTAssertTrue(statusCode == 500)

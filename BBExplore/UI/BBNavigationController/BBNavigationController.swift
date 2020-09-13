@@ -1,5 +1,5 @@
 //
-//  MainNavigationController.swift
+//  BBNavigationController.swift
 //  BBExplore
 //
 //  Created by Ian Gallagher on 11/09/2020.
