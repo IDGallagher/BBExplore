@@ -16,27 +16,25 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="X88-Ku-36e">
-                        <rect key="frame" x="0.0" y="0.0" width="88" height="88"/>
-                        <color key="backgroundColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <rect key="frame" x="10" y="5" width="78" height="78"/>
                         <constraints>
                             <constraint firstAttribute="width" secondItem="X88-Ku-36e" secondAttribute="height" multiplier="1:1" id="blr-PG-cEH"/>
                         </constraints>
                     </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S4s-WD-ky1">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Walter White" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S4s-WD-ky1">
                         <rect key="frame" x="108" y="0.0" width="306" height="88"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <nil key="textColor"/>
+                        <fontDescription key="fontDescription" name="Rockwell-Regular" family="Rockwell" pointSize="17"/>
+                        <color key="textColor" red="0.011764705882352941" green="0.13333333333333333" blue="0.0078431372549019607" alpha="0.84705882352941175" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
-                <color key="backgroundColor" systemColor="systemPurpleColor" red="0.68627450980000004" green="0.32156862749999998" blue="0.87058823529999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                 <constraints>
                     <constraint firstItem="S4s-WD-ky1" firstAttribute="top" secondItem="Uxr-sN-VMf" secondAttribute="top" id="318-wG-jMT"/>
                     <constraint firstItem="S4s-WD-ky1" firstAttribute="leading" secondItem="X88-Ku-36e" secondAttribute="trailing" constant="20" id="5t2-eD-fme"/>
-                    <constraint firstItem="X88-Ku-36e" firstAttribute="top" secondItem="Uxr-sN-VMf" secondAttribute="top" id="B2t-dX-ySt"/>
-                    <constraint firstItem="X88-Ku-36e" firstAttribute="leading" secondItem="Uxr-sN-VMf" secondAttribute="leading" id="H5I-ur-Gn4"/>
+                    <constraint firstItem="X88-Ku-36e" firstAttribute="top" secondItem="Uxr-sN-VMf" secondAttribute="top" constant="5" id="B2t-dX-ySt"/>
+                    <constraint firstItem="X88-Ku-36e" firstAttribute="leading" secondItem="Uxr-sN-VMf" secondAttribute="leading" constant="10" id="H5I-ur-Gn4"/>
                     <constraint firstAttribute="trailing" secondItem="S4s-WD-ky1" secondAttribute="trailing" id="OkQ-qo-bdM"/>
-                    <constraint firstAttribute="bottom" secondItem="X88-Ku-36e" secondAttribute="bottom" id="Rw9-yN-lMY"/>
+                    <constraint firstAttribute="bottom" secondItem="X88-Ku-36e" secondAttribute="bottom" constant="5" id="Rw9-yN-lMY"/>
                     <constraint firstAttribute="bottom" secondItem="S4s-WD-ky1" secondAttribute="bottom" id="qj2-vf-9eo"/>
                 </constraints>
             </tableViewCellContentView>

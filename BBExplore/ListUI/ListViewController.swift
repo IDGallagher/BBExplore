@@ -24,6 +24,9 @@ class ListViewController : UIViewController {
         configureSearchController()
         
         presenter.listItems.observeNext() { [weak self] _ in
+            UIView.animate(withDuration: 0.6) {
+                self?.tableView.alpha = 1
+            }
             self?.tableView.reloadData()
         }.dispose(in: bag)
         
@@ -32,6 +35,7 @@ class ListViewController : UIViewController {
             self?.searchController.searchBar.selectedScopeButtonIndex = 0
         }.dispose(in: bag)
         
+        tableView.alpha = 0
         presenter.refresh()
     }
     

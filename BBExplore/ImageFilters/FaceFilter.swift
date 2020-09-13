@@ -23,15 +23,15 @@ public struct FaceFilter: ImageFilter {
             let detector = CIDetector(ofType: CIDetectorTypeFace, context: nil, options: [CIDetectorAccuracy:CIDetectorAccuracyHigh])
             
             /// Detect faces
-            guard let features = detector?.features(in: cImage!) else {
-                return image
+            guard let features = detector?.features(in: cImage!)
+                else {
+                    return image
             }
             
-            /// Find biggest face rect
-            guard let face = features.max(by: {
-                $0.bounds.size.width < $1.bounds.size.width
-            }) else {
-                return image
+            /// Find widest face rect
+            guard let face = features.max(by: {$0.bounds.size.width < $1.bounds.size.width})
+                else {
+                    return image
             }
             
             /// Transform from CIImage coords to UIImage coords
@@ -52,8 +52,9 @@ public struct FaceFilter: ImageFilter {
             /// Crop the image
             UIGraphicsBeginImageContextWithOptions(CGSize(width: rect.size.width / image.scale, height: rect.size.height / image.scale), true, 0.0)
             image.draw(at: CGPoint(x: -rect.origin.x / image.scale, y: -rect.origin.y / image.scale))
-            guard let croppedImage = UIGraphicsGetImageFromCurrentImageContext() else {
-                return image
+            guard let croppedImage = UIGraphicsGetImageFromCurrentImageContext()
+                else {
+                    return image
             }
             UIGraphicsEndImageContext()
             return croppedImage
