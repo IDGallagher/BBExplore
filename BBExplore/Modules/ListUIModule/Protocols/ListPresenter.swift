@@ -9,6 +9,7 @@
 import Foundation
 import Bond
 
+/// A presenter that provides a list of ListItemEntities. This list can be filtered and an individual item can be selected
 protocol ListPresenter {
     var listItems: Observable<[ListItemEntity]?> {get}
     var isRefreshing: Observable<Bool> {get}

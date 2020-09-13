@@ -7,9 +7,8 @@
 //
 
 import UIKit
-import Bond
-import ReactiveKit
 
+/// This controller displays a generic list of ListItemEntities - provided by a ListPresenter - in a tableview. Layout and cells provided by a subclass
 class ListViewController : UIViewController {
     
     @IBOutlet var tableView: UITableView!

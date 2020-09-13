@@ -21,6 +21,7 @@ class CharacterListPresenterTests: XCTestCase {
     }
 
     /// Test the presenter filters characters correctly
+    /// This also tests the whole APi -> View data route
     func testSearchAndFilter() throws {
         
         stub(condition: isAbsoluteURLString(Constants.apiCharacters)) { _ in
