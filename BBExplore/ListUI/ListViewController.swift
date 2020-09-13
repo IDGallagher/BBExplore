@@ -39,6 +39,16 @@ class ListViewController : UIViewController {
         presenter.refresh()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        searchController.hidesNavigationBarDuringPresentation = true
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        searchController.hidesNavigationBarDuringPresentation = false
+    }
+    
     func configureSearchController() {
         searchController.searchResultsUpdater = self
         searchController.obscuresBackgroundDuringPresentation = false
@@ -66,8 +76,9 @@ extension ListViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
+        searchController.showsSearchResultsController = false
         presenter.select(index: indexPath.row)
+        tableView.deselectRow(at: indexPath, animated: true)
     }
 }
 

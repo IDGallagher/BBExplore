@@ -18,13 +18,13 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vA1-U5-7OZ" userLabel="ContentView">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="1000"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="1075"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="agc-6L-Wag" userLabel="ImageContainer">
                                                 <rect key="frame" x="0.0" y="0.0" width="414" height="560"/>
                                                 <subviews>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="aaH-0h-JZw">
-                                                        <rect key="frame" x="0.0" y="96" width="414" height="464"/>
+                                                        <rect key="frame" x="0.0" y="448" width="414" height="112"/>
                                                     </imageView>
                                                 </subviews>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -48,7 +48,7 @@
                                                 </variation>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2rx-ER-dUW" userLabel="InfoContainer">
-                                                <rect key="frame" x="0.0" y="560" width="414" height="440"/>
+                                                <rect key="frame" x="0.0" y="560" width="414" height="515"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Walter White" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vvD-DD-jnx">
                                                         <rect key="frame" x="18" y="18" width="206" height="41"/>
@@ -125,7 +125,6 @@
                                             <constraint firstAttribute="trailing" secondItem="2rx-ER-dUW" secondAttribute="trailing" id="75V-V6-5Nt"/>
                                             <constraint firstItem="WFh-GZ-PLi" firstAttribute="centerY" secondItem="sgm-i0-jiI" secondAttribute="centerY" id="D4g-wh-wlT"/>
                                             <constraint firstItem="2rx-ER-dUW" firstAttribute="leading" secondItem="vA1-U5-7OZ" secondAttribute="leading" id="L7w-kV-8Bz"/>
-                                            <constraint firstAttribute="height" constant="1000" id="MO7-3v-vOg"/>
                                             <constraint firstItem="agc-6L-Wag" firstAttribute="leading" secondItem="vA1-U5-7OZ" secondAttribute="leading" id="XnY-fA-3Aj"/>
                                             <constraint firstItem="WFh-GZ-PLi" firstAttribute="width" secondItem="sgm-i0-jiI" secondAttribute="width" multiplier="0.7" id="aUu-Ep-ASg"/>
                                             <constraint firstItem="2rx-ER-dUW" firstAttribute="top" secondItem="agc-6L-Wag" secondAttribute="bottom" id="b62-lR-acW"/>
@@ -137,6 +136,7 @@
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="vA1-U5-7OZ" firstAttribute="leading" secondItem="pmb-4E-yFy" secondAttribute="leading" id="JX1-32-iFq"/>
+                                    <constraint firstItem="vA1-U5-7OZ" firstAttribute="height" secondItem="UOK-ge-Iy1" secondAttribute="height" multiplier="1.2" id="JYh-Ka-9Nb"/>
                                     <constraint firstItem="vA1-U5-7OZ" firstAttribute="top" secondItem="pmb-4E-yFy" secondAttribute="top" id="fIj-Rz-4tE"/>
                                     <constraint firstItem="vA1-U5-7OZ" firstAttribute="width" secondItem="5Rk-ru-6Fo" secondAttribute="width" id="izJ-gB-zeO"/>
                                     <constraint firstItem="vA1-U5-7OZ" firstAttribute="trailing" secondItem="pmb-4E-yFy" secondAttribute="trailing" id="r5n-ZI-6tC"/>
