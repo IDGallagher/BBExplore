@@ -14,6 +14,7 @@ class CharacterListPresenter : ListPresenter {
     
     let bag = DisposeBag()
     let interactor: CharacterInteractor
+    var router: Router
     
     private(set) var listItems = Observable<[ListItemEntity]?>(nil)
     private(set) var isRefreshing = Observable<Bool>(false)
@@ -23,9 +24,10 @@ class CharacterListPresenter : ListPresenter {
     private var searchFilter = Observable<String?>(nil)
     private var searchCategory = Observable<SearchCategoryEntity?>(nil)
     
-    init(interactor: CharacterInteractor) {
+    init(router: Router, interactor: CharacterInteractor) {
         
         self.interactor = interactor
+        self.router = router
         
         interactor.characters.observeNext() { [weak self] characters in
             self?.searchCategories.send(self?.createSearchCategories(fromCharacters: characters))
@@ -78,5 +80,15 @@ class CharacterListPresenter : ListPresenter {
     
     func set(searchCategory: SearchCategoryEntity?) {
         self.searchCategory.send(searchCategory)
+    }
+    
+    func select(index: Int) {
+        guard
+            let listItems = listItems.value,
+            listItems.count > index
+            else {
+                return
+        }
+        router.navigateTo(path: "\(listItems[index].uid)")
     }
 }

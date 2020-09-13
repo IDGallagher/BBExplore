@@ -64,6 +64,11 @@ extension ListViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return presenter.listItems.value?.count ?? 0
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        presenter.select(index: indexPath.row)
+    }
 }
 
 extension ListViewController: UITableViewDelegate {

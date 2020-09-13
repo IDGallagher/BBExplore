@@ -18,4 +18,5 @@ protocol ListPresenter {
     func refresh()
     func set(searchFilter: String?)
     func set(searchCategory: SearchCategoryEntity?)
+    func select(index: Int)
 }

@@ -27,6 +27,9 @@
 		95E0E797250BDB3500F42500 /* SearchCategoryEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95E0E796250BDB3500F42500 /* SearchCategoryEntity.swift */; };
 		95E0E79A250D462800F42500 /* FaceFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95E0E799250D462800F42500 /* FaceFilter.swift */; };
 		95E0E79C250D638500F42500 /* CircleFaceFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95E0E79B250D638500F42500 /* CircleFaceFilter.swift */; };
+		95E0E79F250E366600F42500 /* BBDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95E0E79E250E366600F42500 /* BBDetailViewController.swift */; };
+		95E0E7A1250E367B00F42500 /* BBDetailViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 95E0E7A0250E367B00F42500 /* BBDetailViewController.storyboard */; };
+		95E0E7A3250E373E00F42500 /* CharacterDetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95E0E7A2250E373E00F42500 /* CharacterDetailPresenter.swift */; };
 		95F412C7250944C600E5E33D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F412C6250944C600E5E33D /* AppDelegate.swift */; };
 		95F412C9250944C600E5E33D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F412C8250944C600E5E33D /* SceneDelegate.swift */; };
 		95F412D0250944C900E5E33D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 95F412CF250944C900E5E33D /* Assets.xcassets */; };
@@ -72,6 +75,9 @@
 		95E0E796250BDB3500F42500 /* SearchCategoryEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCategoryEntity.swift; sourceTree = "<group>"; };
 		95E0E799250D462800F42500 /* FaceFilter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FaceFilter.swift; sourceTree = "<group>"; };
 		95E0E79B250D638500F42500 /* CircleFaceFilter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleFaceFilter.swift; sourceTree = "<group>"; };
+		95E0E79E250E366600F42500 /* BBDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BBDetailViewController.swift; sourceTree = "<group>"; };
+		95E0E7A0250E367B00F42500 /* BBDetailViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = BBDetailViewController.storyboard; sourceTree = "<group>"; };
+		95E0E7A2250E373E00F42500 /* CharacterDetailPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterDetailPresenter.swift; sourceTree = "<group>"; };
 		95F412C3250944C600E5E33D /* BBExplore.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BBExplore.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		95F412C6250944C600E5E33D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		95F412C8250944C600E5E33D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -141,6 +147,7 @@
 		95E0E782250B879C00F42500 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				95E0E79D250E365600F42500 /* BBDetailViewController */,
 				95E0E783250B884400F42500 /* MainNavigationController.swift */,
 			);
 			path = UI;
@@ -163,6 +170,15 @@
 				95E0E79B250D638500F42500 /* CircleFaceFilter.swift */,
 			);
 			path = ImageFilters;
+			sourceTree = "<group>";
+		};
+		95E0E79D250E365600F42500 /* BBDetailViewController */ = {
+			isa = PBXGroup;
+			children = (
+				95E0E79E250E366600F42500 /* BBDetailViewController.swift */,
+				95E0E7A0250E367B00F42500 /* BBDetailViewController.storyboard */,
+			);
+			path = BBDetailViewController;
 			sourceTree = "<group>";
 		};
 		95F412BA250944C600E5E33D = {
@@ -188,10 +204,10 @@
 		95F412C5250944C600E5E33D /* BBExplore */ = {
 			isa = PBXGroup;
 			children = (
+				95F41307250A521D00E5E33D /* Constants */,
 				95E0E798250D407700F42500 /* ImageFilters */,
 				95E0E787250B972900F42500 /* Extensions */,
 				95E0E782250B879C00F42500 /* UI */,
-				95F41307250A521D00E5E33D /* Constants */,
 				95E0E76B250A878F00F42500 /* ListUI */,
 				95F41304250A518000E5E33D /* APIService */,
 				95F412F725094DD200E5E33D /* CharacterModule */,
@@ -223,6 +239,7 @@
 				95F412FB25094E7600E5E33D /* CharacterEntity.swift */,
 				95F412F825094E4300E5E33D /* CharacterInteractor.swift */,
 				95E0E769250A846C00F42500 /* CharacterListPresenter.swift */,
+				95E0E7A2250E373E00F42500 /* CharacterDetailPresenter.swift */,
 			);
 			path = CharacterModule;
 			sourceTree = "<group>";
@@ -341,6 +358,7 @@
 				95E0E791250BA45000F42500 /* ListItemTableViewCell.xib in Resources */,
 				95F412D3250944C900E5E33D /* LaunchScreen.storyboard in Resources */,
 				95F412D0250944C900E5E33D /* Assets.xcassets in Resources */,
+				95E0E7A1250E367B00F42500 /* BBDetailViewController.storyboard in Resources */,
 				95E0E78F250B982B00F42500 /* ListViewController.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -450,6 +468,7 @@
 				95E0E793250BA58200F42500 /* ListItemTableViewCell.swift in Sources */,
 				95F412F925094E4300E5E33D /* CharacterInteractor.swift in Sources */,
 				95E0E78D250B981300F42500 /* ListViewController.swift in Sources */,
+				95E0E7A3250E373E00F42500 /* CharacterDetailPresenter.swift in Sources */,
 				95E0E79A250D462800F42500 /* FaceFilter.swift in Sources */,
 				95E0E786250B916200F42500 /* MainRouter.swift in Sources */,
 				95E0E795250BA5E400F42500 /* UITableViewCell+Nib.swift in Sources */,
@@ -459,6 +478,7 @@
 				95F41303250A4FF700E5E33D /* APIService.swift in Sources */,
 				95E0E771250A898E00F42500 /* ListItemEntity.swift in Sources */,
 				95E0E797250BDB3500F42500 /* SearchCategoryEntity.swift in Sources */,
+				95E0E79F250E366600F42500 /* BBDetailViewController.swift in Sources */,
 				95F412C9250944C600E5E33D /* SceneDelegate.swift in Sources */,
 				95E0E789250B976900F42500 /* UIViewController+Storyboard.swift in Sources */,
 			);

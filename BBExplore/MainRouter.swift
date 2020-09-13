@@ -8,21 +8,34 @@
 
 import UIKit
 
-class MainRouter {
+protocol Router {
+    func navigateTo(path: String)
+    func goBack()
+}
+
+class MainRouter : Router {
     
     let navigationController: MainNavigationController
-    let apiService: APIService
+    let interactor: CharacterInteractor
     
     init(navigationController: MainNavigationController) {
         self.navigationController = navigationController
-        self.apiService = APIService()
+        self.interactor = CharacterInteractor(apiService: APIService())
     }
     
     func onLaunch() {
         let viewController = ListViewController.createFromStoryboard()
-        let interactor = CharacterInteractor(apiService: apiService)
-        viewController.presenter = CharacterListPresenter(interactor: interactor)
+        viewController.presenter = CharacterListPresenter(router: self, interactor: interactor)
         navigationController.pushViewController(viewController, animated: false)
     }
     
+    func navigateTo(path: String) {
+        let viewController = BBDetailViewController.createFromStoryboard()
+        viewController.presenter = CharacterDetailPresenter(router: self, interactor: interactor, uid: Int(path))
+        navigationController.pushViewController(viewController, animated: true)
+    }
+    
+    func goBack() {
+        navigationController.popViewController(animated: true)
+    }
 }
