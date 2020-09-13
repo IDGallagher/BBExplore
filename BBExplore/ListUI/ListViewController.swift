@@ -76,7 +76,6 @@ extension ListViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        searchController.showsSearchResultsController = false
         presenter.select(index: indexPath.row)
         tableView.deselectRow(at: indexPath, animated: true)
     }
