@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		26E12FCC0D2E966CCB7AE3D0 /* Pods_BBExplore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9ABC9406819B74FBB62CDA2E /* Pods_BBExplore.framework */; };
+		952A3B28250ED8AC004174D5 /* UIView+Pulsate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 952A3B27250ED8AC004174D5 /* UIView+Pulsate.swift */; };
 		95AFED82250E8CAA00EC7EFC /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95AFED81250E8CAA00EC7EFC /* Router.swift */; };
 		95E0E761250A5EC500F42500 /* APITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95E0E760250A5EC500F42500 /* APITests.swift */; };
 		95E0E765250A631800F42500 /* charactersMock.json in Resources */ = {isa = PBXBuildFile; fileRef = 95E0E764250A631800F42500 /* charactersMock.json */; };
@@ -60,6 +61,7 @@
 		4FC827F8652BB8772ED049A2 /* Pods-BBExplore-BBExploreUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BBExplore-BBExploreUITests.release.xcconfig"; path = "Target Support Files/Pods-BBExplore-BBExploreUITests/Pods-BBExplore-BBExploreUITests.release.xcconfig"; sourceTree = "<group>"; };
 		66C9C6391BBEAE58D01887D5 /* Pods_BBExploreTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BBExploreTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6F66FE5A0F9FE35D574C77FC /* Pods-BBExplore.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BBExplore.debug.xcconfig"; path = "Target Support Files/Pods-BBExplore/Pods-BBExplore.debug.xcconfig"; sourceTree = "<group>"; };
+		952A3B27250ED8AC004174D5 /* UIView+Pulsate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Pulsate.swift"; sourceTree = "<group>"; };
 		95AFED81250E8CAA00EC7EFC /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		95E0E760250A5EC500F42500 /* APITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APITests.swift; sourceTree = "<group>"; };
 		95E0E764250A631800F42500 /* charactersMock.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = charactersMock.json; sourceTree = "<group>"; };
@@ -187,6 +189,7 @@
 				95E0E788250B976900F42500 /* UIViewController+Storyboard.swift */,
 				95E0E78A250B97B700F42500 /* NSObject+ClassName.swift */,
 				95E0E794250BA5E400F42500 /* UITableViewCell+Nib.swift */,
+				952A3B27250ED8AC004174D5 /* UIView+Pulsate.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -570,6 +573,7 @@
 				95F41303250A4FF700E5E33D /* BBAPIService.swift in Sources */,
 				95E0E771250A898E00F42500 /* ListItemEntity.swift in Sources */,
 				95E0E797250BDB3500F42500 /* SearchCategoryEntity.swift in Sources */,
+				952A3B28250ED8AC004174D5 /* UIView+Pulsate.swift in Sources */,
 				95E0E79F250E366600F42500 /* BBDetailViewController.swift in Sources */,
 				95F412C9250944C600E5E33D /* SceneDelegate.swift in Sources */,
 				95E0E7A8250E7CFC00F42500 /* BBListViewController.swift in Sources */,

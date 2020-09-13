@@ -25,7 +25,7 @@
                                                 <rect key="frame" x="0.0" y="0.0" width="414" height="560"/>
                                                 <subviews>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="aaH-0h-JZw">
-                                                        <rect key="frame" x="0.0" y="0.0" width="414" height="560"/>
+                                                        <rect key="frame" x="0.0" y="179" width="414" height="381"/>
                                                     </imageView>
                                                 </subviews>
                                                 <color key="backgroundColor" systemColor="systemGray5Color" red="0.8980392157" green="0.8980392157" blue="0.91764705879999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -99,10 +99,10 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WFh-GZ-PLi" userLabel="ArrowBackground">
-                                                <rect key="frame" x="343" y="539" width="42" height="42"/>
+                                                <rect key="frame" x="344" y="540" width="40" height="40"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="width" secondItem="WFh-GZ-PLi" secondAttribute="height" id="x9O-hE-8oh"/>
+                                                    <constraint firstAttribute="width" secondItem="WFh-GZ-PLi" secondAttribute="height" multiplier="0.99" id="x9O-hE-8oh"/>
                                                 </constraints>
                                             </view>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sgm-i0-jiI" userLabel="Arrow">
@@ -127,7 +127,7 @@
                                             <constraint firstItem="WFh-GZ-PLi" firstAttribute="centerY" secondItem="sgm-i0-jiI" secondAttribute="centerY" id="D4g-wh-wlT"/>
                                             <constraint firstItem="2rx-ER-dUW" firstAttribute="leading" secondItem="vA1-U5-7OZ" secondAttribute="leading" id="L7w-kV-8Bz"/>
                                             <constraint firstItem="agc-6L-Wag" firstAttribute="leading" secondItem="vA1-U5-7OZ" secondAttribute="leading" id="XnY-fA-3Aj"/>
-                                            <constraint firstItem="WFh-GZ-PLi" firstAttribute="width" secondItem="sgm-i0-jiI" secondAttribute="width" multiplier="0.7" id="aUu-Ep-ASg"/>
+                                            <constraint firstItem="WFh-GZ-PLi" firstAttribute="width" secondItem="sgm-i0-jiI" secondAttribute="width" multiplier="0.66" id="aUu-Ep-ASg"/>
                                             <constraint firstItem="2rx-ER-dUW" firstAttribute="top" secondItem="agc-6L-Wag" secondAttribute="bottom" id="b62-lR-acW"/>
                                             <constraint firstItem="agc-6L-Wag" firstAttribute="top" secondItem="vA1-U5-7OZ" secondAttribute="top" id="cVz-u4-auM"/>
                                             <constraint firstAttribute="bottom" secondItem="2rx-ER-dUW" secondAttribute="bottom" id="fau-CB-RXn"/>
@@ -160,6 +160,7 @@
                     </view>
                     <connections>
                         <outlet property="appearanceLabel" destination="sdb-L4-nSc" id="JbF-C8-rHT"/>
+                        <outlet property="backButton" destination="sgm-i0-jiI" id="Pg8-U7-tHn"/>
                         <outlet property="imageView" destination="aaH-0h-JZw" id="vwD-iZ-ib1"/>
                         <outlet property="nameLabel" destination="vvD-DD-jnx" id="Oyp-Lw-cGT"/>
                         <outlet property="nicknameLabel" destination="ia6-2m-Zp2" id="diT-ki-Eu8"/>

@@ -19,6 +19,7 @@ class BBDetailViewController : UIViewController {
     @IBOutlet var occupationLabel: UILabel!
     @IBOutlet var statusLabel: UILabel!
     @IBOutlet var appearanceLabel: UILabel!
+    @IBOutlet var backButton: UIButton!
     
     var presenter: CharacterDetailPresenter!
     
@@ -33,6 +34,10 @@ class BBDetailViewController : UIViewController {
 
         // Hide the navigation bar on the this view controller
         self.navigationController?.setNavigationBarHidden(true, animated: animated)
+    }
+    
+    override func viewDidLayoutSubviews() {
+        backButton.pulsate()
     }
 
     override func viewWillDisappear(_ animated: Bool) {
