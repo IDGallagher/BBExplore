@@ -8,4 +8,6 @@ Views take their direction from Presenters that get their data from Interactors.
 Logic concerned with Breaking Bad characters should only be in CharactersModule while logic concerning 
 the display of a list of cells in a tableview should be in ListUIModile. 
 
-App-specific code is prefixed with "BB"
+App-specific code is prefixed with "BB".
+
+The tableview uses facial recognition to get decent thumbnail pics from the images provided while the detail view may look vaguely familiar to Tinder users ;-)
